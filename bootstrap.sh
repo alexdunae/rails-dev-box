@@ -39,6 +39,16 @@ install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev
 install 'Imagemagick dependencies' imagemagick libmagickwand-dev
 install 'ExecJS runtime' nodejs
 
+cat >/home/vagrant/.railsrc <<EOL
+--skip-bundle
+--database=postgresql
+-m /vagrant/rails-template.rb
+EOL
+
+cat >/home/vagrant/.gemrc <<EOL
+gem: --no-ri --no-rdoc
+EOL
+
 echo installing MinitestReporters
 gem install minitest-reporters -N >/dev/null 2>&1
 
@@ -50,17 +60,5 @@ gem install rails -N >/dev/null 2>&1
 
 # Needed for docs generation.
 update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8
-
-
-cat >/home/vagrant/.railsrc <<EOL
---skip-bundle
---database=postgresql
--m /vagrant/rails-template.rb
-EOL
-
-cat >/home/vagrant/.gemrc <<EOL
-gem: --no-ri --no-rdoc
-EOL
-
 
 echo 'all set, rock on!'
