@@ -39,6 +39,9 @@ install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev
 install 'Imagemagick dependencies' imagemagick libmagickwand-dev
 install 'ExecJS runtime' nodejs
 
+echo installing MinitestReporters
+gem install minitest-reporters -N >/dev/null 2>&1
+
 echo installing Bundler
 gem install bundler -N >/dev/null 2>&1
 
