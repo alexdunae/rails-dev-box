@@ -49,6 +49,10 @@ cat >/home/vagrant/.gemrc <<EOL
 gem: --no-ri --no-rdoc
 EOL
 
+cp /vagrant/dotfiles/gitconfig /home/vagrant/.gitconfig
+cp /vagrant/dotfiles/githelpers /home/vagrant/.githelpers
+cp /vagrant/dotfiles/irbrc /home/vagrant/.irbrc
+
 echo installing MinitestReporters
 gem install minitest-reporters -N >/dev/null 2>&1
 

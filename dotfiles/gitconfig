@@ -1,0 +1,42 @@
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[core]
+  quotepath = false
+  excludesfile = /home/vagrant/.gitignore
+[apply]
+  whitespace = nowarn
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[merge]
+  tool = opendiff
+[credential]
+  helper = cache --timeout=31536000
+[difftool]
+  prompt = false
+[filter "media"]
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
+[mergetool]
+  keepBackup = false
+[alias]
+  head = !git l -1
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !git l -30
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
+  co = checkout
+  cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !git l -30
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
+[push]
+  default = current
