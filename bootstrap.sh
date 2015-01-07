@@ -52,6 +52,7 @@ EOL
 cp /vagrant/dotfiles/gitconfig /home/vagrant/.gitconfig
 cp /vagrant/dotfiles/githelpers /home/vagrant/.githelpers
 cp /vagrant/dotfiles/irbrc /home/vagrant/.irbrc
+cp /vagrant/dotfiles/test_helper.rb /home/vagrant/.test_helper.rb
 
 echo installing MinitestReporters
 gem install minitest-reporters -N >/dev/null 2>&1
