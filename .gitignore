@@ -1,2 +1,5 @@
 .vagrant
 rails
+projects/*
+.DS_Store
+*.swp
