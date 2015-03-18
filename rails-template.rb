@@ -49,7 +49,9 @@ lib 'tasks/testing.rake', <<-'EOC'
 end
 EOC
 
-run 'bundle install'
+run 'bundle install --shebang=ruby'
+
+run "sed -i -- 's/ruby[0-9.]*/ruby/g' bin/*"
 
 run 'rm README.rdoc'
 run 'touch README.md'
