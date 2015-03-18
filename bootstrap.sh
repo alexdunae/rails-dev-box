@@ -12,7 +12,7 @@ apt-get -y update >/dev/null 2>&1
 
 install 'development tools' build-essential
 
-install Ruby ruby2.1 ruby2.1-dev rubygems
+install Ruby ruby2.1 ruby2.1-dev rubygems rubygems1.8
 update-alternatives --set ruby /usr/bin/ruby2.1 >/dev/null 2>&1
 update-alternatives --set gem /usr/bin/gem2.1 >/dev/null 2>&1
 
@@ -53,6 +53,9 @@ gem install bundler -N >/dev/null 2>&1
 
 echo installing Rails
 gem install rails -N >/dev/null 2>&1
+
+echo installing Heroku Toolbet
+sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # Needed for docs generation.
 update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8
