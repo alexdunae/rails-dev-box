@@ -26,15 +26,6 @@ sudo -u postgres createuser --superuser vagrant
 sudo -u postgres createuser --superuser rails
 sudo -u postgres createdb -O vagrant activerecord_unittest
 
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-install MySQL mysql-server libmysqlclient-dev
-mysql -uroot -proot <<SQL
-CREATE USER 'rails'@'localhost';
-CREATE DATABASE activerecord_unittest  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
-GRANT ALL PRIVILEGES ON *.* to 'rails'@'localhost';
-SQL
-
 install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev
 install 'Imagemagick dependencies' imagemagick libmagickwand-dev
 install 'ExecJS runtime' nodejs
